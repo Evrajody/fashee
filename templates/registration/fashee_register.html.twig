@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Fashee | Inscription</title>
+		{{ encore_entry_link_tags('login') }}
+
+	</head>
+	<body>
+
+		<div class="login-page">
+			<div class="form">
+				{{ form_start(registrationForm) }}
+                    <div class="row pb-3">
+                        <div class="col-6 offset-3">
+                            <img src=" {{asset('images/icons/logo.png')}} " alt="fashee-logo" srcset="">
+                        </div>
+                    </div>
+
+                    {{ form_widget(registrationForm.nom) }}
+                    {{ form_widget(registrationForm.prenom) }}
+                    {{ form_widget(registrationForm.address) }}
+                    {{ form_widget(registrationForm.email) }}
+                    {{ form_widget(registrationForm.plainPassword.first) }}
+                    {{ form_widget(registrationForm.plainPassword.second) }}
+
+                    <input type="submit" value="S'inscrire">
+                    <p class="message">Vous avez un compte !?
+                        <a href=" {{ path("app_authenticator")  }} ">Connectez-vous ici !
+                        </a>
+                    </p>
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+        
+		{{ encore_entry_script_tags('login') }}
+	</body>
+</html>

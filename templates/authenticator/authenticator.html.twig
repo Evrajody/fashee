@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>
+			Fashee | Connexion
+		</title>
+		{{ encore_entry_link_tags('login') }}
+
+	</head>
+	<body>
+
+		<div class="login-page">
+
+			{% if error %}
+				<div class="alert alert-danger alert-common" role="alert">
+					{{ error.messageKey|trans(error.messageData, 'security') }}
+				</div>
+			{% endif %}
+
+			<div class="form">
+				<form class="login-forms " method="POST" action=" {{ path("app_authenticator")  }} ">
+
+					<div class="row pb-3">
+						<div class="col-6 offset-3">
+							<img src=" {{asset('images/icons/logo.png')}} " alt="" srcset="">
+						</div>
+					</div>
+
+					<input type="text" placeholder="Email" name="_username" value=" {{ lastUsername}} "/>
+					<input type="password" placeholder="Mot de passe" name="_password"/>
+       			   <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+					<input type="submit" value="Se Connectez">
+
+					<p class="message">Pas de compte ?
+						<a href=" {{ path("app_register")  }} ">Creer en ici !</a>
+					</p>
+				</form>
+			</div>
+		</div>
+
+		{{ encore_entry_script_tags('login') }}</body>
+</html></body></html>
+
