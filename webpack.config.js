@@ -26,12 +26,7 @@ Encore
         "jquery" :  './assets/plugins/jquery/jquery-3.2.1.min.js',
         "login" : './assets/login.js',
         "fashee_shop" : './assets/fashee_shop.js',
-        // "bootstrap" : './assets/plugins/bootstrap/js/bootstrap.min.js',
-        // "select2" : './assets/plugins/select2/select2.min.js',
-        // "slick" : './assets/plugins/slick/slick.min.js',
-        // "sweetalert" : './assets/plugins/sweetalert/sweetalert.min.js',
-        // "parallax" : './assets/plugins/parallax100/parallax100.js',
-        // "manual" : './assets/main.js'
+        "fashee_checkout" : './assets/fashee_checkout.js',
     })
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

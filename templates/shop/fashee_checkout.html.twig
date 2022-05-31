@@ -1,0 +1,314 @@
+{% extends "template.html.twig" %}
+
+{% block title %}
+	Fashee | Cart
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('fashee_checkout') }}
+{% endblock %}
+
+{% block body %}
+
+	<!-- Title Page -->
+	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(' {{ asset('images/slider/slider-2.jpg')  }} ');">
+		<h2 class="l-text2 t-center">
+			Caisse
+		</h2>
+		<p class="m-text13 t-center">
+			Passer votre commande maintenant !
+		</p>
+	</section>
+
+	<!-- ##### Checkout Area Start ##### -->
+	<div class="checkout_area section-padding-80">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-12 col-md-6 col-lg-5">
+					<div class="order-details-confirmation">
+
+						<div class="cart-page-heading">
+							<h5>Details de la commande
+							</h5>
+							<p>
+								AB#1210000F</p>
+						</div>
+
+						<ul class="order-details-form mb-4">
+							<li>
+								<span>Product</span>
+								<span>Total</span>
+							</li>
+							<li>
+								<span>Cocktail Yellow dress</span>
+								<span>$59.90</span>
+							</li>
+							<li>
+								<span>Subtotal</span>
+								<span>$59.90</span>
+							</li>
+							<li>
+								<span>Shipping</span>
+								<span>Free</span>
+							</li>
+							<li>
+								<span>Total</span>
+								<span>$59.90</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-6 ml-lg-auto">
+					<div class="checkout_details_area ">
+
+						<div class="tab01">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" data-toggle="tab" href="#KKiapay" role="tab">
+										KKiapay
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" data-toggle="tab" href="#cardBank" role="tab">Carte de credit
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" data-toggle="tab" href="#PayPal" role="tab">PayPal</a>
+								</li>
+							</ul>
+
+							<!-- Tab panes -->
+							<div class="tab-content p-t-35">
+								<!-- - -->
+								<div class="tab-pane fade show active" id="KKiapay" role="tabpanel">
+
+
+									<div class="cart-page-heading mb-30">
+										<h5>Informations du client</h5>
+									</div>
+
+									<form action="#" method="post">
+										<div class="row">
+											<div class="col-md-6 mb-3">
+												<label for="first_name">Nom
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="first_name" value="" required>
+											</div>
+
+											<div class="col-md-6 mb-3">
+												<label for="last_name">
+													Prenom
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="last_name" value="" required>
+											</div>
+
+											<div class="col-12 mb-3">
+												<label for="street_address">Email
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control mb-3" id="street_address" value="">
+											</div>
+
+											<div class="col-12 mb-4">
+												<label for="email_address">Adresse de livraison
+													<span>*</span>
+												</label>
+												<input type="email" class="form-control" id="email_address" value="">
+											</div>
+
+											<div class="col-12 mb-3">
+												<label for="postcode">
+													Telephone (Pour le payement Moov - Mtn)
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="postcode" value="">
+											</div>
+
+										</div>
+
+										<div class="text-right pt-2">
+											<a href="#" class="btn essence-btn">
+												Valider la commande
+											</a>
+										</div>
+
+
+									</form>
+
+
+								</div>
+
+								<!-- - -->
+								<div class="tab-pane fade" id="PayPal" role="tabpanel">
+
+
+									<div class="cart-page-heading mb-30">
+										<h5>Informations du client</h5>
+									</div>
+
+									<form action="#" method="post">
+										<div class="row">
+											<div class="col-md-6 mb-3">
+												<label for="first_name">Nom
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="first_name" value="" required>
+											</div>
+
+											<div class="col-md-6 mb-3">
+												<label for="last_name">
+													Prenom
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="last_name" value="" required>
+											</div>
+
+											<div class="col-12 mb-3">
+												<label for="street_address">Email
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control mb-3" id="street_address" value="">
+											</div>
+
+											<div class="col-12 mb-4">
+												<label for="email_address">Adresse de livraison
+													<span>*</span>
+												</label>
+												<input type="email" class="form-control" id="email_address" value="">
+											</div>
+
+											<div class="col-md-6 mb-3">
+												<label for="first_name">Identifiant
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="first_name" value="" required>
+											</div>
+
+											<div class="col-md-6 mb-3">
+												<label for="last_name">
+													Expiration
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="last_name" value="" required>
+											</div>
+
+											<div class="col-12 mb-3">
+												<label for="postcode">
+													Numero de compte Paypal
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="postcode" value="">
+											</div>
+										</div>
+
+										<div class="text-right pt-2">
+											<a href="#" class="btn essence-btn">
+												Valider la commande
+											</a>
+										</div>
+
+
+									</form>
+								</div>
+
+								<!--  -->
+								<div class="tab-pane fade" id="cardBank" role="tabpanel">
+									<div class="cart-page-heading mb-30">
+										<h5>Informations du client</h5>
+									</div>
+
+									<form action="#" method="post">
+										<div class="row">
+											<div class="col-md-6 mb-3">
+												<label for="first_name">Nom
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="first_name" value="" required>
+											</div>
+
+											<div class="col-md-6 mb-3">
+												<label for="last_name">
+													Prenom
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="last_name" value="" required>
+											</div>
+
+											<div class="col-12 mb-3">
+												<label for="street_address">Email
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control mb-3" id="street_address" value="">
+											</div>
+
+											<div class="col-12 mb-4">
+												<label for="email_address">Adresse de livraison
+													<span>*</span>
+												</label>
+												<input type="email" class="form-control" id="email_address" value="">
+											</div>
+
+											<div class="col-12 mb-4">
+												<label for="email_address">Nom de la carte
+													<span>*</span>
+												</label>
+												<input type="email" class="form-control" id="email_address" value="">
+											</div>
+
+											<div class="col-12 mb-4">
+												<label for="email_address">Numero de la carte
+													<span>*</span>
+												</label>
+												<input type="email" class="form-control" id="email_address" value="">
+											</div>
+
+
+											<div class="col-md-6 mb-3">
+												<label for="first_name">Code de securité
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="first_name" value="" required>
+											</div>
+
+											<div class="col-md-6 mb-3">
+												<label for="last_name">
+													Date d'expiration
+													<span>*</span>
+												</label>
+												<input type="text" class="form-control" id="last_name" value="" required>
+											</div>
+
+										</div>
+
+										<div class="text-right pt-2">
+											<a href="#" class="btn essence-btn">
+												Valider la commande
+											</a>
+										</div>
+									</form>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- ##### Checkout Area End ##### -->
+
+{% endblock %}
+
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('fashee_checkout') }}
+{% endblock %}

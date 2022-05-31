@@ -9,8 +9,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class ShopController extends AbstractController
 {
     #[Route('/fashee/shop', name: 'app_shop')]
-    public function index(): Response
+    public function displayFasheeShop(): Response
     {
         return $this->render('shop/fashee_shop.html.twig');
     }
+
+    #[Route('/fashee/cart', name: 'app_cart')]
+    public function displayCustomerCart(): Response
+    {
+        return $this->render('shop/fashee_cart.html.twig');
+    }
+
+
+
+    #[Route('/fashee/checkout', name: 'app_cart')]
+    public function orderCheckout(): Response
+    {
+        return $this->render('shop/fashee_checkout.html.twig');
+    }
+
 }
