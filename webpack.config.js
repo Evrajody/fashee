@@ -25,7 +25,7 @@ Encore
     .addEntries({
         "jquery" :  './assets/plugins/jquery/jquery-3.2.1.min.js',
         "login" : './assets/login.js',
-        // "popper" : './assets/plugins/bootstrap/js/popper.js',
+        "fashee_shop" : './assets/fashee_shop.js',
         // "bootstrap" : './assets/plugins/bootstrap/js/bootstrap.min.js',
         // "select2" : './assets/plugins/select2/select2.min.js',
         // "slick" : './assets/plugins/slick/slick.min.js',

@@ -37,6 +37,11 @@ $(".selection-1").select2({
        dropdownParent: $('#dropDownSelect1')
 });
 
+$(".selection-2").select2({
+       minimumResultsForSearch: 20,
+       dropdownParent: $('#dropDownSelect2')
+});
+
 
 $('.block2-btn-addcart').each(function(){
        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
