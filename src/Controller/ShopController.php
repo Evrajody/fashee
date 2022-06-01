@@ -21,8 +21,7 @@ class ShopController extends AbstractController
     }
 
 
-
-    #[Route('/fashee/checkout', name: 'app_cart')]
+    #[Route('/fashee/checkout', name: 'app_checkout')]
     public function orderCheckout(): Response
     {
         return $this->render('shop/fashee_checkout.html.twig');

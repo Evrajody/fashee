@@ -3,16 +3,15 @@
 <head>
 
 	<title>{% block title %}{% endblock %}  </title>
-
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-<link rel="icon" type="image/png" href=" {{asset('images/icons/favicon.png')}} "/>
-<!--===============================================================================================-->
-{{ encore_entry_link_tags('app') }}
-<!--===============================================================================================-->
-{% block stylesheets %}{% endblock %}
-<!--===============================================================================================-->
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href=" {{asset('images/icons/favicon.png')}} "/>
+	<!--===============================================================================================-->
+	{{ encore_entry_link_tags('app') }}
+	<!--===============================================================================================-->
+	{% block stylesheets %}{% endblock %}
+	<!--===============================================================================================-->
 </head>
 
 
@@ -42,7 +41,7 @@
 		</div>
 	</div>
 
-	<!-- top noti -->
+	<!-- top notifications --> 
 	<div class="flex-c-m size22 bg0 s-text21 pos-relative">
 		20% de réduction!
 		<a href="product.html" class="s-text22 hov6 p-l-5">
@@ -75,17 +74,14 @@
 				<div class="topbar-child2">
 
 					{% if app.user %}
-							<span class="topbar-email">
-							{{app.user.nom}} {{app.user.prenom}}
-							</span>
+						<span class="topbar-email">
+						{{app.user.nom}} {{app.user.prenom}}
+						</span>
 					{% endif %}
-
-
-	
 
 					<div class="topbar-language rs1-select2">
 						<select class="selection-1" name="time">
-							<option>XOF</option>
+							<option>XOF</option>	
 							<option>USD</option>
 							<option>EUR</option>
 						</select>
@@ -152,6 +148,9 @@
 <!--===============================================================================================-->
     {{ encore_entry_script_tags('app') }}
 <!--===============================================================================================-->
+
+<!--===============================================================================================-->
+
   {% block javascripts %}
 	  
   {% endblock %}
