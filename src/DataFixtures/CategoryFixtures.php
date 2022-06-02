@@ -9,6 +9,8 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 
 class CategoryFixtures extends Fixture
 {
+    public const CATEGORY_REFERENCE = 'category';
+
     public function load(ObjectManager $manager): void
     {
         $customCategories = [
@@ -20,14 +22,13 @@ class CategoryFixtures extends Fixture
             "Bracelets"
         ];
 
-        for ($i=0; $i < count($customCategories) ; $i++) { 
             $category = new Category();
-            $category->setNom($customCategories[$i]);
+            $category->setNom($customCategories[rand(0, 5)]);
             $category->setCreateAt(new DateTime());
+            $this->addReference(self::CATEGORY_REFERENCE, $category);
             $category->setUpdatedAt(new DateTime());
             $manager->persist($category);
-        }
-
-        $manager->flush();
+            $manager->flush();
+            // $this->addReference(self::ADMIN_USER_REFERENCE, $category);
     }
 }

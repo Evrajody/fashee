@@ -2,6 +2,7 @@
 
 
 import 'nouislider/distribute/nouislider.min.css'
+
 import * as noUiSlider from 'nouislider/distribute/nouislider.min.js';
 
 // // /*[ No ui ]
@@ -25,3 +26,6 @@ import * as noUiSlider from 'nouislider/distribute/nouislider.min.js';
   filterBar.noUiSlider.on('update', function( values, handle ) {
       skipValues[handle].innerHTML = Math.round(values[handle]) ;
   });
+
+
+  
