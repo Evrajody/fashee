@@ -20,13 +20,18 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/app.js')
-
+    
     .addEntries({
+        "app" : './assets/app.js',
         "jquery" :  './assets/plugins/jquery/jquery-3.2.1.min.js',
         "login" : './assets/login.js',
         "fashee_shop" : './assets/fashee_shop.js',
         "fashee_checkout" : './assets/fashee_checkout.js',
+    })
+
+    .copyFiles({
+        from : './assets/plugins/jquery',
+        to: 'copyjquery.js'
     })
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

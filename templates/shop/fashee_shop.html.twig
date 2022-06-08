@@ -135,10 +135,8 @@
 					<!-- Product -->
 					<div class="row">
 
-
 					    {% for article in articles %}
-
-
+                           
 							<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 								<!-- Block2 -->
 								<div class="block2">
@@ -152,8 +150,9 @@
 
 											<div class="block2-btn-addcart w-size1 trans-0-4">
 												<!-- Button -->
-												<a  href="#" id="addCartBtn"  class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-													 	  Panier
+												<a  href=""  class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4 addCartBtn">
+														<span class="d-none"> {{ article.id  }}  </span>
+													 	Panier
 												</a>
 											</div>
 										</div>
@@ -170,14 +169,14 @@
 									</div>
 								</div>
 							</div>
-
-                        
+							
 						{% endfor %}
+
+
 
 					 <div class="row">
 						<div class="col-md-12">
 							{{ knp_pagination_render(articles) }}
-
 						</div>
 					 </div>
 
@@ -187,15 +186,36 @@
 			</div>
 		</div>
 	</section>
-
-
 {% endblock %}
 
 
 {% block javascripts %}
    {{ encore_entry_script_tags('fashee_shop') }}
+   <script src="{{ asset('build/copyjquery.js') }}"></script>
   
-
+   <script type="text/javascript">
+	$(".addCartBtn").click(function (e) { 
+			e.preventDefault();
+			$.ajax({
+				type: "post",
+				url: "{{ path('app_add_cart')}}",
+				data:  { id : $(this).find("span").text() },
+				dataType: "json",
+				success: function (articleOnCart) {
+					console.log(articleOnCart.category)
+					swal({
+						title: articleOnCart.nom,
+						text: "ajouté au panier",
+						icon: "success",
+						button: "Okay",
+					}).then((value) => {
+						location.reload();
+					})
+				}
+			});
+		
+		});
+   </script>
 
 
 {% endblock %}

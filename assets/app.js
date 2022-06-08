@@ -7,9 +7,7 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 
-import $ from 'jquery/dist/jquery.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import './plugins/bootstrap/js/popper.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
 
@@ -41,22 +39,6 @@ $(".selection-2").select2({
        minimumResultsForSearch: 20,
        dropdownParent: $('#dropDownSelect2')
 });
-
-
-$('.block2-btn-addcart').each(function(){
-       var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-       $(this).on('click', function(){
-              swal(nameProduct, "is added to cart !", "success");
-       });
-});
-
-$('.block2-btn-addwishlist').each(function(){
-       var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
-       $(this).on('click', function(){
-              swal(nameProduct, "is added to wishlist !", "success");
-       });
-});
-
 
 // start the Stimulus application
 // import './bootstrap';

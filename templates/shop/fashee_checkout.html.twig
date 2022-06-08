@@ -41,30 +41,32 @@
 							<h5>Details de la commande
 							</h5>
 							<p>
-								AB#1210000F</p>
+								AB#1210000F
+							</p>
 						</div>
 
 						<ul class="order-details-form mb-4">
+
 							<li>
 								<span>Product</span>
 								<span>Total</span>
 							</li>
-							<li>
-								<span>Cocktail Yellow dress</span>
-								<span>$59.90</span>
-							</li>
-							<li>
-								<span>Subtotal</span>
-								<span>$59.90</span>
-							</li>
-							<li>
-								<span>Shipping</span>
-								<span>Free</span>
-							</li>
-							<li>
-								<span>Total</span>
-								<span>$59.90</span>
-							</li>
+
+							{% if app.session.get('panier') | length > 0 %}
+
+								{% for item in app.session.get('panier') %}
+									<li>
+										<span>{{ item.produit.nom}} ( x {{ item.quantite  }} )</span>
+										<span> {{ item.produit.prix  * item.quantite  }} FCFA  </span>
+									</li>
+								{% endfor %}
+
+									<li>
+										<span>Total</span>
+										<span> {{ app.session.get('total')  }} FCFA  </span>
+									</li>
+							{% endif %}
+
 						</ul>
 					</div>
 				</div>
@@ -230,8 +232,7 @@
 
 {% block javascripts %}
 	{{ encore_entry_script_tags('fashee_checkout') }}
-
-	<script amount="3" 
+	<script amount="{{ app.session.get('total')  }}" 
 	callback="{{ path('app_home')}}" 
 	data="" 
 	url="{{ asset('images/icons/logo.png')}}" 

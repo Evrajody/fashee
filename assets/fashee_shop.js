@@ -1,19 +1,18 @@
 
-
-
+import $ from 'jquery/dist/jquery.min.js';
 import 'nouislider/distribute/nouislider.min.css'
-
 import * as noUiSlider from 'nouislider/distribute/nouislider.min.js';
+
 
 // // /*[ No ui ]
 // // ===========================================================*/
  var filterBar = document.getElementById('filter-bar');
 
  noUiSlider.create(filterBar, {
-     start: [ 50, 200 ],
+     start: [ 20, 200 ],
      connect: true,
      range: {
-         'min': 50,
+         'min': 20,
          'max': 200
      }
  });
@@ -27,5 +26,3 @@ import * as noUiSlider from 'nouislider/distribute/nouislider.min.js';
       skipValues[handle].innerHTML = Math.round(values[handle]) ;
   });
 
-
-  
